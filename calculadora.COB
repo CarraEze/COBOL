@@ -1,7 +1,6 @@
        IDENTIFICATION DIVISION.
        PROGRAM-ID. PRUEBA.
        DATA DIVISION.
-       FILE SECTION.
        WORKING-STORAGE SECTION.
        01 NUM1 PIC 99.
        01 NUM2 PIC 99.
@@ -11,7 +10,7 @@
        MAIN-PROCEDURE.
        DISPLAY "ESTA CALCULADORA SOLO ACEPTA OPERANDOS DE DOS DIGITOS".
       *CICLO A REPETIR
-       CALCULAR.
+           CALCULAR.
             DISPLAY "INGRESE LA OPERACION A REALIZAR"
             DISPLAY "0 PARA SALIR"
             DISPLAY "1 PARA SUMAR"
@@ -21,7 +20,7 @@
             DISPLAY "5 PARA POTENCIAR"
             ACCEPT OPCION
             IF OPCION = 0 THEN
-                PERFORM TERMINAR
+                GO TO TERMINAR
             END-IF
             DISPLAY "INGRESE DOS OPERANDOS"
             ACCEPT NUM1
@@ -52,18 +51,17 @@
                 PERFORM POTENCIA
             END-IF
 
-            PERFORM CALCULAR.
+            GO TO CALCULAR.
 
-       POTENCIA.
+           POTENCIA.
            IF NUM2 > 0 THEN
                MULTIPLY NUM1 BY RESUL GIVING RESUL
                SUBTRACT 1 FROM NUM2
-               PERFORM POTENCIA
+               GO TO POTENCIA
            ELSE
                DISPLAY "LA POTENCIA ES: "RESUL
-               PERFORM CALCULAR
            END-IF.
-       TERMINAR.
+           TERMINAR.
             DISPLAY "HA SALIDO DEL PROGRAMA"
             STOP RUN.
        END PROGRAM PRUEBA.
