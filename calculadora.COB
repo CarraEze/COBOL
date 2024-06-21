@@ -48,19 +48,15 @@
       *POENCIA
             IF OPCION = 5 THEN
                 MOVE 1 TO RESUL
-                PERFORM POTENCIA
+                PERFORM POTENCIA NUM2 TIMES
+                DISPLAY "LA POTENCIA ES: "RESUL
             END-IF
 
             GO TO CALCULAR.
 
            POTENCIA.
-            IF NUM2 > 0 THEN
-               MULTIPLY NUM1 BY RESUL GIVING RESUL
-               SUBTRACT 1 FROM NUM2
-               GO TO POTENCIA
-            ELSE
-               DISPLAY "LA POTENCIA ES: "RESUL
-            END-IF.
+            MULTIPLY NUM1 BY RESUL GIVING RESUL.
+
            TERMINAR.
             DISPLAY "HA SALIDO DEL PROGRAMA"
             STOP RUN.
