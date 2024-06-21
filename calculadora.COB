@@ -54,13 +54,13 @@
             GO TO CALCULAR.
 
            POTENCIA.
-           IF NUM2 > 0 THEN
+            IF NUM2 > 0 THEN
                MULTIPLY NUM1 BY RESUL GIVING RESUL
                SUBTRACT 1 FROM NUM2
                GO TO POTENCIA
-           ELSE
+            ELSE
                DISPLAY "LA POTENCIA ES: "RESUL
-           END-IF.
+            END-IF.
            TERMINAR.
             DISPLAY "HA SALIDO DEL PROGRAMA"
             STOP RUN.
